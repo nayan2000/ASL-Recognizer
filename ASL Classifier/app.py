@@ -40,7 +40,7 @@ def index():
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             prediction = process_file(os.path.join(app.config['UPLOAD_FOLDER'], filename), filename)
-            return render_template('result.html', output = prediction)
+            return render_template('index.html', output = prediction)
     return render_template('index.html')
 
 global graph
