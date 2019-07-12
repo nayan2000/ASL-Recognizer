@@ -12,9 +12,9 @@ Create a new Virtual Environment(say named my_env):
 
 `cd ASL-Recognizer`
 
-`cd "ASL Classifier"`
-
 `pip install -r "requirements.txt"`
+
+`cd "ASL Classifier"`
 
 `python app.py`
 
