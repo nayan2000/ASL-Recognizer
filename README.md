@@ -16,6 +16,8 @@ Create a new Virtual Environment(say named my_env):
 
 `cd "ASL Classifier"`
 
+`mkdir static`
+
 `python app.py`
 
 
