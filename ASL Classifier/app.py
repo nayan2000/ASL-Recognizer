@@ -11,10 +11,10 @@ import numpy as np
 import math
 from keras.models import load_model
 import tensorflow as tf
-UPLOAD_FOLDER = os.path.dirname(os.path.abspath(__file__)) + '/uploads/'
+UPLOAD_FOLDER = os.path.dirname(os.path.abspath(__file__)) + '/static/'
 ALLOWED_EXTENSIONS = {'jpg','png'}
 
-app = Flask(__name__, static_url_path="/static")
+app = Flask(__name__)
 DIR_PATH = os.path.dirname(os.path.realpath(__file__))
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
@@ -40,7 +40,9 @@ def index():
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             prediction = process_file(os.path.join(app.config['UPLOAD_FOLDER'], filename), filename)
-            return render_template('index.html', output = prediction)
+            path=str(filename)
+            # print(path)
+            return render_template('result.html', output = prediction, path=str(filename))
     return render_template('index.html')
 
 global graph

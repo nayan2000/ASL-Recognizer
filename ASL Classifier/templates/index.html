@@ -50,6 +50,7 @@ font-family: 'Roboto', sans-serif;
 .imgupload{
     
     color: #1E2832;
+    background: url("{{url_for('static', filename=path)}}");
     
     padding-top: 30px;
     font-size: 7em;
@@ -81,7 +82,7 @@ border-color: #ff3f3f !important; */
 
 /*these two are set to not display at start*/
 .imgupload.ok{
-background: url(..\\uploads\\0.jpg);
+/* background: url("{{url_for('static', filename=path)}}"); */
 display:none;
 color:green;
 }
@@ -201,13 +202,6 @@ margin-left: 0px;
          </div>
       </div>
    </form>
-   <div class="new">
-      <div class="col-md-12">
-         <br><br>
-         <h1 class="white">Predicted label: {{ output }}</h1>
-      </div>
-   </div>
-</div>
 </div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 <script>
